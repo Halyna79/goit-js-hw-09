@@ -1,8 +1,9 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+import "../css/styles.css";
 
 
-const galleryItems = [
+const images = [
   {
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg',
@@ -70,22 +71,21 @@ const galleryItems = [
 
 
 const galleryContainer = document.querySelector('.gallery');
-const galleryMarkup = galleryItems
+const galleryHtml = images
     .map(({ preview, original, description }) => `
     <li class="gallery-item">
 	  <a class="gallery-link" href="${original}">
 		<img 
 		  class="gallery-image" 
 		  src="${preview}" 
+          data-source="${original}" 
 		  alt="${description}">
 	  </a>
     </li>
-`)
+    `
+    )
     .join('');
-galleryContainer.innerHTML = galleryMarkup;
-// galleryContainer.addEventListener("click", (event) => {
-//     event.preventDefault();
-// });
+galleryContainer.innerHTML = galleryHtml;
 
 const lightbox = new SimpleLightbox('gallery a', {
     captionsData: 'alt',
