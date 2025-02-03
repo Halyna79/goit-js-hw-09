@@ -4,8 +4,9 @@ import{S as n}from"./vendor-CgTBfC_f.js";(function(){const t=document.createElem
 		<img 
 		  class="gallery-image" 
 		  src="${a}" 
+          data-source="${t}" 
 		  alt="${i}">
 	  </a>
     </li>
-`).join("");s.innerHTML=l;new n("gallery a",{captionsData:"alt",captionDelay:250});
-//# sourceMappingURL=1-gallery-BsBy5_tq.js.map
+    `).join("");s.innerHTML=l;new n("gallery a",{captionsData:"alt",captionDelay:250});
+//# sourceMappingURL=1-gallery-BleupooJ.js.map
